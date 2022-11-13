@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Rotate</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src = "app.js"></script>
+    <script>
+$(document).ready(function(){
+    var rotateDegrees = 0;
+    $("#circle2").click(function(){
+        rotateDegrees += 30;
+        $("body").css("transform","rotate(" + rotateDegrees + "deg)");
+});
+$("#circle1").click(function(){
+  rotateDegrees -=30;
+  $("body").css("transform","rotate(" + rotateDegrees + "deg)");
+});
+})
+    </script>
+    <style>
+    .circle-container {
+            position: fixed;
+            top: 0px;
+            left: 50vw;
+        }
+        .circle {
+            background-color: pink;
+            height: 180px;
+            width: 180px;
+            border-radius: 50%;
+            position: relative;
+            transition: transform 0.5s linear;
+
+        } 
+      body {
+        position: relative;
+        top: 20vh;
+        background-color: white;
+        margin: 0;
+        min-width: 100vw;
+        min-height: 100vh;
+        overflow-y: scroll;
+        cursor: pointer;
+      }
+      body img{
+        position: fixed;
+        left: 20%;
+        top: 20%;
+        height: 80vh;
+        width: auto;
+      }
+      .search {
+    position: relative;
+    top: 0%;
+    height: 5vh;
+    }
+.search .input {
+    font-size: 18px;
+    padding: 4px;
+    height: 50px;
+    width: 50px;
+    border: 0;
+    transition: width 0.3s ease;
+}
+.nav-link{
+    font-size:x-large;
+}
+.btn {
+    visibility: visible;
+    border: 0;
+    cursor: pointer;
+    font-size: 24px;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    height: 50px;
+    width: 50px;
+    transition: transform 0.3s ease;
+}
+
+.btn:focus, .input:focus {
+outline: none;
+}
+
+.search.active .input {
+     width: 200px;
+}
+
+  .search.active .btn {
+      transform: translateX(198px);
+  }
+    </style>
+</head>
+<nav class="navbar fixed-top navbar-light bg-light">
+    <a href="home.html" class="nav-link">Home</a>
+    <div class="search">
+      <input type="text" class="input" placeholder="">
+      <button class="btn">
+          <i class="fas fa-search"></i>
+      </button>
+      </div>
+    <a href = "rotate.html" class = "nav-link">Rotating Image</a>
+    <a href="About.html" class="nav-link">About Us</a>
+</nav>
+<div class="circle-container" id = "circle1">
+    <div class="circle">
+    </div>
+</div>
+<body>
+    <img src = "https://th.bing.com/th/id/R.755c355ef51e1142445068c47cdc89ce?rik=7PqMiMjQYFOCIw&riu=http%3a%2f%2fwww.tennisnuts.com%2fimages%2fproduct%2ffull%2fSHBAMX-ORA.jpg&ehk=sHC2ICdz%2fQcT1dEGNQegPxBje5i0YHMGdzH%2b2Fnixd0%3d&risl=&pid=ImgRaw&r=0">
+</body>
+</html>

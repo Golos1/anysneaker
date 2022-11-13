@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         height: 100vh;
+         overflow: hidden;
+         margin: 0;
+        }
+        .bg {
+         filter: blur(30px);
+         background-color: pink;
+        }
+        .loading-text {
+          font-size: 50px;
+        }
+
+    </style>
+</head>
+<body>
+  <section class="bg"></section>
+  <div class="loading-text">0%</div>
+  <script>
+  const loadText = document.querySelector('.loading-text')
+  const bg = document.querySelector('.bg')
+
+  let load = 0
+
+  let int = setInterval(blurring, 30)
+
+  function blurring() {
+    load++
+
+      if(load > 99) {
+        clearInterval(int)
+      }
+
+      loadText.innerText = `${load}%`;
+      if(load==100){
+        $(location).attr('href', "home.html");
+      }
+      loadText.style.opacity = scale(load, 0, 100, 1, 0)
+  }
+  const scale = (num, in_min, in_max, out_min, out_max) => {
+    return ((num - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min
+  }
+
+</script>
+</body>
+</html>
