@@ -1,0 +1,15 @@
+{
+    "launch": {
+        
+        "configurations": [
+
+            {
+                "name": "Launch Edge",
+                "request": "launch",
+                "type": "msedge",
+                "url": "http://localhost:8080",
+                "file": "load.html"
+            },
+        ]
+    }
+}
